@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Payment Logging Form {% endblock %}</h1>
+    {% for message in messages[::-1] %}
+        <div class='message'>
+            <h2>{{ message['fullName'] }}</h2>
+            <h3 style="color:green;">Amount: ${{ message['amount'] }}</h3> 
+            <h3>{{ message['paymentStatus'] }}</h3>
+            <h4>{{ message['date'] }}</h4>
+            <p>Remarks: {{ message['remarks'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
